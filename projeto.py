@@ -1,3 +1,7 @@
+# Entrar com Login de ADM: Login: adm.Leonardo  -- Senha: leo1234
+# Entrar com Login de Colaborador: Login: colab.Aline -- Senha: colab.Aline
+
+
 from flask import Flask, render_template, request, redirect, url_for, Response, session
 from flask_sqlalchemy import SQLAlchemy
 import enum
@@ -9,7 +13,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 # a linha abaixo é a minha variavel de aplicação
 app = Flask(__name__)
 
-app.secret_key = "admin"  # Substitua por uma chave segur
+app.secret_key = "admin" 
 
 #a linha abaixo é a configuração do BD
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:admin@127.0.0.1/OliviaModas'
@@ -85,7 +89,7 @@ def principal():
         if not login or not senha:
             return render_template("login.html", mensagem="Por favor, preencha o login e a senha.")
 
-        usuario = Usuario.query.filter_by(login=login).first()  # CORRIGIDO: Buscar pelo campo login
+        usuario = Usuario.query.filter_by(login=login).first()  # Buscar pelo campo login
         print(f"Usuário encontrado: {login, senha}")  # Teste para ver se está encontrando o usuário correto
 
         if usuario:  # Verifica se encontrou o usuário
