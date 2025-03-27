@@ -1,5 +1,5 @@
 # Entrar com Login de ADM: Login: adm.Leonardo  -- Senha: leo1234
-# Entrar com Login de Colaborador: Login: colab.Aline -- Senha: colab.Aline
+# Entrar com Login de Colaborador: Login: colab.Aline -- Senha: aline1234
 
 
 from flask import Flask, render_template, request, redirect, url_for, Response, session
